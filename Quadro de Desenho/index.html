@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadro de Desenhos</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>Canvas</h1>
+        <div class="repositorio"><a href="">GitHub</a></div>
+    </header>
+
+    <div class="areaTotal">
+
+        <div class="drawArea">
+            <canvas id="tela" width="1200" height="750"></canvas>
+        </div>
+
+
+        <div class="areaMenu">
+
+            <div class="tools">Tools
+                <div class="areaTools">
+                    <div class="toolsDraw">
+                    </div>
+                    <div class="toolsDraw">
+                    </div>
+                    <div class="toolsDraw">
+                    </div>
+                    <div class="toolsDraw">
+                    </div>
+                </div>
+            </div>
+
+            <div class="colorArea"> Cores
+                <div class="colorAreaAll">
+                    <div data-color="black" style="background-color: black" class="color active"></div>
+                    <div data-color="blue" style="background-color: blue" class="color"></div>
+                    <div data-color="red" style="background-color: red" class="color"></div>
+                    <div data-color="green" style="background-color: green" class="color"></div>
+                    <div data-color="yellow" style="background-color: yellow" class="color"></div>
+                    <div data-color="gray" style="background-color: gray" class="color"></div>
+                    <div data-color="brown" style="background-color: brown" class="color"></div>
+                    <div data-color="purple" style="background-color: purple" class="color"></div>
+                    <div data-color="orange" style="background-color: orange" class="color"></div>
+                    <div data-color="orangered" style="background-color: orangered" class="color"></div>
+                </div>
+            </div>
+
+            <div class="areaButton">
+                <button class="clear">Limpar Quadro</button>
+            </div>
+        
+        </div>
+
+    </div>
+
+    <footer>Created by Weslley Rodrigues @2025</footer>
+
+    
+
+   
+
+    <script src="script.js"></script>
+</body>
+</html>
