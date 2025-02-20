@@ -6,14 +6,14 @@ let areas = {
 
 // Events 
 document.querySelectorAll('.item').forEach((item)=>{
-    item.addEventListener('dragstart', dragStart) // Disparado quando o item começa a ser arrastado.
-    item.addEventListener('dragend', dragEnd) // Disparado quando o arraste termina.
+    item.addEventListener('dragstart', dragStart) 
+    item.addEventListener('dragend', dragEnd) 
 })
 
 document.querySelectorAll('.area').forEach((area)=>{
-    area.addEventListener('dragover', dragOver) // Disparado continuamente enquanto o elemento arrastado está sobre uma área de destino válida.
-    area.addEventListener('dragleave', dragLeave) // Disparado quando o elemento arrastado sai de uma área de destino válida.
-    area.addEventListener('drop', drop) // Disparado quando o elemento arrastado é solto em uma área de destino válida.
+    area.addEventListener('dragover', dragOver) 
+    area.addEventListener('dragleave', dragLeave) 
+    area.addEventListener('drop', drop)
 })
 
 
@@ -38,7 +38,7 @@ function dragEnd(e){
 
 function dragOver(e){
     if(e.currentTarget.querySelector('.item') === null){ 
-        e.preventDefault() // e dessa forma aqui eu libero, o dragOver tem o comportamento natural de não liberar o elemento, quando eu coloco um preventDefault eu inibo este comportamento.
+        e.preventDefault() 
         e.currentTarget.classList.add('hover')
        
     }
@@ -54,12 +54,12 @@ function dragLeave(e){
 
 
 
-function drop(e){ // Para que essa função funcione eu preciso 'liberar'' no dragOver para que seja permiitido dropar o item aqui.
+function drop(e){ 
     e.currentTarget.classList.remove('hover')
 
-    if(e.currentTarget.querySelector('.item') === null){ // Se na área de drop não tiver nenhum elemento com a classe .item, então rode o código a seguir
-        let dragItem = document.querySelector('.item.dragging') // Selecionei o elemento que está sendo arrastado
-        e.currentTarget.appendChild(dragItem) // Na área de drop acrescente o ''dragItem''.
+    if(e.currentTarget.querySelector('.item') === null){ 
+        let dragItem = document.querySelector('.item.dragging')
+        e.currentTarget.appendChild(dragItem) 
     }
     updateAreas()
     
@@ -86,7 +86,7 @@ function dragLeaveNeutral(e){
 
 function dropNeutral(e){
     e.currentTarget.classList.remove('hover')
-    let dragItem = document.querySelector('.item.dragging') // Selecionei o elemento que está sendo arrastado
+    let dragItem = document.querySelector('.item.dragging')
     e.currentTarget.appendChild(dragItem)
     updateAreas()
 }

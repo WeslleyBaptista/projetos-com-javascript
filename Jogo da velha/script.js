@@ -7,8 +7,8 @@ let square = {
 }
 
 let turn = ''
-let playing = false // vai armazenar se o jogo está funcionando ou não
-let warning = '' // variável que vai armazenar quem ganhou, perdeu ou se empatou
+let playing = false 
+let warning = '' 
 
 
 reset()
@@ -16,7 +16,7 @@ reset()
 // Eventos
 document.querySelector('.reset').addEventListener('click', reset)
 
-document.querySelectorAll('.item').forEach((item)=>{ // selecionei todos os elementos que tem a class ''item'', dei um loop em todos eles e adicionei um evento de click.
+document.querySelectorAll('.item').forEach((item)=>{ 
     item.addEventListener('click', itemClick)
 })
 

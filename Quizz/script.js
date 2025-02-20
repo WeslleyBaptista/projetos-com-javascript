@@ -14,7 +14,7 @@ document.querySelector('.scoreArea button').addEventListener('click', reset)
 // Functions
 
 function showQuestion(){
-    if(questions[currentQuestion]){ // quando eu faço isso daqui, a minha variável está indicando umINDICE DENTRO DO MEU ARRAY, no caso o indice 0, ela não se transforma em um elemento do meu array.
+    if(questions[currentQuestion]){ 
         let q = questions[currentQuestion]
 
         let pct = Math.floor((currentQuestion / questions.length) * 100)
@@ -47,7 +47,7 @@ function showQuestion(){
 
 
 function optionClickEvent(e){
-    let clickedOption = parseInt(e.target.getAttribute('data-op')) // se eu nao tivesse colocado o parseInt aqui, ele retornaria a resposta como string e não daria certo pois tem que estar como number.
+    let clickedOption = parseInt(e.target.getAttribute('data-op'))
     let q = questions[currentQuestion]
     if(q.answer === clickedOption){
         correctAnwers++

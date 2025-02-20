@@ -22,8 +22,7 @@ pizzaJson.map((item, index)=>{
     // CÓDIGO RELACIONADO COM O MODAL
     pizzaItem.querySelector('a').addEventListener('click', (e)=>{
     e.preventDefault()
-    //let key = pizzaItem.getAttribute('data-key') // eu posso fazer assim
-    let key = e.target.closest('.pizza-item').getAttribute('data-key') // como posso fazer assim também, closest() serviu para eu encontrar o elemento div com a classe .pizza-item' mais próximo do botão (event.target), mesmo que o clique tenha ocorrido dentro de um filho do contêiner.
+    let key = e.target.closest('.pizza-item').getAttribute('data-key') 
     modalQt = 1
     modalKey = key
 

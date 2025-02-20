@@ -6,21 +6,19 @@ let infoAbaixo = document.querySelector('.d-2')
 let numeros = document.querySelector('.d-1-numero')
 
 let etapaAtual = 0
-let numeroA = '' // número  que estou digitando no momento
+let numeroA = ''
 let votoBranco = false
 
-
-// A função a seguir é responsável por iniciar a tela da urna fazendo com que alguns elementos sumam, ela também cria quadrados onde vão ser usados para adicionar os números digitados.
 function comecarEtapa(){
-    let etapa = etapas[etapaAtual] // selecionei o primeiro item do array e armazenei na variável ''etapa''
-    votoBranco = false // mantive a variável do botão em branco como desativada.
-    numeroA = '' // variável que recebe os números digitados fica vazia
-    let numerosHtml = '' // variável onde os vão ser armazenados os elemntos que vão ser criado para adicioanr os quadrados na tela
+    let etapa = etapas[etapaAtual] 
+    votoBranco = false 
+    numeroA = '' 
+    let numerosHtml = '' 
     for(let i = 0; i < etapa.numeros; i++){
-        if(i === 0){ // se o ''i'' for igual a zero, então, faça um loop enquanto ele for menor que ''numeros'' (valor que tenho no array) e concatene na variável ''numerosHtml''
+        if(i === 0){ 
             numerosHtml +=  '<div class="voto-numero pisca"></div>'
         }else{
-            numerosHtml +=  '<div class="voto-numero"></div>' // caso não, concatene do mesmo jeito porém não coloque a class ''pisca''.
+            numerosHtml +=  '<div class="voto-numero"></div>' 
         }
     }
 
@@ -37,14 +35,14 @@ function atualizaInterface(){
     let etapa = etapas[etapaAtual]
 
     let candidato = etapa.candidatos.filter((item)=>{
-        if(item.numero === numeroA){ // Se o item com o número do político for igual ao número digitado pela pessoa que está votando retorne true, se não, retorne false.
+        if(item.numero === numeroA){ 
             return true
         }else{
             return false
         }
     })
     if(candidato.length > 0){
-        candidato = candidato[0] // pega o candidato que foi escolhido e armazena na variável
+        candidato = candidato[0] 
         seuVotoPara.style.display = 'block' 
         info.innerHTML = `Nome: ${candidato.nome}<br/>Partido: ${candidato.partido}`
         infoAbaixo.style.display  = 'block'

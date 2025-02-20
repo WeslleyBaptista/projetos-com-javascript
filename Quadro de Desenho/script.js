@@ -60,13 +60,13 @@ function draw(x, y){
     let pointY = y - screen.offsetTop
 
     ctx.beginPath()
-    ctx.lineWith = 10 // 5px de largura a linha
-    ctx.lineJoin = 'round' // formato da linha mais arredondado
-    ctx.moveTo(mouseX, mouseY) // mova o cursor para a posição inicial
-    ctx.lineTo(pointX, pointY) // faça uma linha até esses 2 pontos.
-    ctx.closePath() //comando que determina o fim
-    ctx.strokeStyle = currentColor // comando que armazena a cor
-    ctx.stroke() // comando que mudar cor da linha
+    ctx.lineWith = 10 
+    ctx.lineJoin = 'round' 
+    ctx.moveTo(mouseX, mouseY) 
+    ctx.lineTo(pointX, pointY) 
+    ctx.closePath() 
+    ctx.strokeStyle = currentColor 
+    ctx.stroke() 
 
     mouseX = pointX
     mouseY = pointY
@@ -74,8 +74,6 @@ function draw(x, y){
 
 
 function clearScreen(){
-    //comando de inicio que permite estar apagando a tela
     ctx.setTransform(1,0,0,1,0,0);
-    //função que deleta todas as linhas da tela
     ctx.clearRect(0,0, ctx.canvas.width, ctx.canvas.height);
 }
